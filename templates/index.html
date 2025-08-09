@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Medscribe Prototype</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #f2f5f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #1e88e5;
+      padding: 1rem;
+      text-align: center;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 2rem auto;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #1e88e5;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .start-button {
+      display: inline-block;
+      background-color: #1e88e5;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .start-button:hover {
+      background-color: #1565c0;
+    }
+
+    footer {
+      margin-top: 1.5rem;
+      text-align: center;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>Medscribe Prototype</h2>
+  </header>
+
+  <div class="container">
+    <h1>Welcome to the Scribe Prototype</h1>
+    <p>
+      This application demonstrates a streamlined, modern interface for medical documentation.
+      Click the button below to explore the scribe page and see how real-time notes can be taken.
+    </p>
+    <div style="text-align: center;">
+      <a href="{{ url_for('scribe') }}" class="start-button">Start Scribe</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Medscribe Prototype
+  </footer>
+
+</body>
+</html>

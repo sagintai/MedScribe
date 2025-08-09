@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual env
+venv/
+.env
+
+# OS
+.DS_Store
+
+# Local configs & secrets
+.env
+*.credentials.json
+*credentials*.json
+# Игнорируем конкретный твой файл с ключами (оставь точное имя)
+bellaregistration-129619e4b425.json
+
+# IDE
+.vscode/
+.idea/
+
+# Flask/instance (если появится)
+instance/

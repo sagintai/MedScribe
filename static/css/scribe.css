@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    background: linear-gradient(135deg, #e0ecff 0%, #f5f7fa 100%);
+  }
+  
+  /* ===== Sidebar ===== */
+  .sidebar {
+    width: 280px;
+    background: #ffffffee;
+    backdrop-filter: blur(8px);
+    border-right: 1px solid #ccc;
+    padding: 20px;
+  }
+  
+  .sidebar .patient-header h2 {
+    color: #1e88e5;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .patient-info p {
+    margin-bottom: 0.5rem;
+  }
+  
+  .patient-history h3 {
+    color: #1e88e5;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .patient-history ul {
+    list-style: disc inside;
+    margin-left: 0.5rem;
+  }
+  
+  /* ===== Main Content ===== */
+  .main-content {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  /* ===== Columns ===== */
+  .column {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 20px;
+  }
+  
+  .transcript-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .summary-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  /* ===== Encounter Intro ===== */
+  #encounterIntro {
+    text-align: center;
+    margin: auto 0; 
+  }
+  #encounterIntro h1 {
+    color: #1e88e5;
+    margin-bottom: 15px;
+  }
+  #encounterIntro p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  /* ===== Transcript Section ===== */
+  #transcriptSection h2 {
+    color: #1e88e5;
+    margin-bottom: 10px;
+  }
+  #transcriptArea {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
+    resize: vertical;
+    margin-bottom: 10px;
+  }
+  
+  /* ===== Summary Column ===== */
+  .summary-column h2 {
+    color: #1e88e5;
+    margin-bottom: 10px;
+  }
+  #summaryArea {
+    width: 100%;
+    height: 60vh;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
+    resize: vertical;
+    margin-bottom: 15px;
+  }
+  
+  /* ===== Buttons ===== */
+  button {
+    background-color: #1e88e5;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  button:hover {
+    background-color: #1565c0;
+  }
+  button:focus {
+    outline: none;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  

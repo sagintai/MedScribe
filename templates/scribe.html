@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Medical Scribe</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/scribe.css') }}">
+</head>
+<body>
+  <!-- SideBar -->
+  <aside class="sidebar">
+    <div class="patient-header">
+      <h2>Patient Information</h2>
+    </div>
+    <div class="patient-info">
+      <p><strong>Name:</strong> John Doe</p>
+      <p><strong>ID:</strong> 990802113582</p>
+      <p><strong>Age:</strong> 45</p>
+      <p><strong>Chronic Conditions:</strong> Bronchitis</p>
+      <p><strong>Allergies:</strong> Penicillin, Seasonal allergies</p>
+    </div>
+    <div class="patient-history">
+      <h3>Medical History</h3>
+      <ul>
+        <li>Heart surgery (2020)</li>
+        <li>Frequent colds</li>
+        <li>Hypertension</li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Central Block -->
+  <main class="main-content">
+    <section class="column transcript-column">
+      <div id="encounterIntro">
+        <h1>Welcome</h1>
+        <p>Click the button "Start Encounter" to start the session and enable the microphone.<br />
+        <p>Click the button "Use Sample.wav" to make transcription of audio in <i>static/sample.wav</i> instead of speaking with someone.</p>
+        <p>The conversation text will be displayed after processing.</p>
+        <button id="startEncounterBtn">Start Encounter</button>
+
+        <!-- Sample.wav Button -->
+        <button id="useSampleBtn" style="margin-left:8px;">Use <u>Sample.wav</u></button>
+        <audio id="samplePlayer" class="hidden" controls style="margin-top:8px; width:100%;">
+          <source src="{{ url_for('static', filename='sample.wav') }}" type="audio/wav" />
+        </audio>
+
+      </div>
+
+      <div id="transcriptSection" class="hidden">
+        <h2>Transcript</h2>
+        <div id="loadingSpinner" style="display: none;">
+            <p id="loadingText">Recording in progress...</p>
+            <div class="dot-container">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+        
+        <style>
+          .dot-container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 10px;
+              margin: 30px auto;
+          }
+          .dot {
+              width: 15px;
+              height: 15px;
+              background-color: black;
+              border-radius: 50%;
+              opacity: 0;
+              animation: dotAnimation 1.5s infinite;
+          }
+          .dot:nth-child(1) { animation-delay: 0s; }
+          .dot:nth-child(2) { animation-delay: 0.3s; }
+          .dot:nth-child(3) { animation-delay: 0.6s; }
+          @keyframes dotAnimation {
+              0% { opacity: 0; }
+              50% { opacity: 1; }
+              100% { opacity: 0; }
+          }
+        </style>
+
+        <textarea 
+          id="transcriptArea" 
+          placeholder="The conversation transcript will appear here..."
+        ></textarea>
+
+        <div class="dialog-controls">
+          <span id="loadingText" class="hidden">Processing conversation...</span>
+          <button id="stopRecordingBtn" class="hidden">Stop Recording</button>
+          <button id="continueRecordingBtn" class="hidden">Continue Recording</button>
+          <button id="createSummaryBtn" class="hidden">Create Summary</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary column -->
+    <section class="column summary-column">
+      <h2>Summary</h2>
+      <h5 class="hidden" id="summaryLoading" style="color:green;">Generating summary...</h5>
+      <textarea 
+        id="summaryArea" 
+        placeholder="The generated summary will appear here..."
+      ></textarea>
+      <button id="sendToEmrBtn">Send to EMR</button>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/scribe.js') }}"></script>
+</body>
+</html>

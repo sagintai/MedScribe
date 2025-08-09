@@ -1,0 +1,33 @@
+**Cleaned Dialogue:**
+
+**Patient:** I've had a sharp pain in my lower back for the last 3 days. It's getting worse, especially when I bend or sit for long periods.
+
+**Doctor:** I see. Any fever, numbness in your legs, or trouble controlling your bladder?
+
+---
+
+**Medical EMR Summary:**
+
+- **Patient Complaint:** Sharp pain in the lower back for the last 3 days, worsening with bending or prolonged sitting.
+- **Duration:** 3 days
+- **Symptoms:**
+  - Sharp pain in the lower back
+  - Pain exacerbated by bending or sitting for long periods
+- **Doctor's Inquiry:**
+  - Fever: Not reported
+  - Numbness in legs: Not reported
+  - Trouble controlling bladder: Not reported
+- **Diagnosis Considerations:**
+  - Muscular strain
+  - Herniated disc
+  - Sciatica
+  - Other spinal issues
+- **Treatment Options:**
+  - Rest and avoid activities that exacerbate pain
+  - Over-the-counter pain relief (e.g., NSAIDs)
+  - Application of heat or cold packs
+  - Physical therapy exercises to strengthen back muscles
+  - If symptoms persist or worsen, further imaging (e.g., MRI) may be needed
+- **Follow-up Plan:**
+  - Monitor symptoms for any new developments such as fever, numbness, or bladder issues
+  - Re-evaluation if no improvement or if symptoms worsen within a week

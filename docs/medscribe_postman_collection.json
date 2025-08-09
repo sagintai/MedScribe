@@ -1,0 +1,89 @@
+{
+  "info": {
+    "name": "Medscribe Demo",
+    "description": "Postman collection for testing the MedScribe Flask API (transcription + EMR summary).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "c3c1a6de-9a5d-4c62-9c0c-7cba2f5b8c11"
+  },
+  "item": [
+    {
+      "name": "Transcribe (file upload)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "audio_data",
+              "type": "file",
+              "src": ""
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/transcribe",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "transcribe"
+          ]
+        },
+        "description": "Upload an audio file using the form field `audio_data`. The server re-encodes it to 16kHz mono WAV via FFmpeg and returns JSON with the transcript."
+      },
+      "response": []
+    },
+    {
+      "name": "Process Transcript (EMR summary)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"transcript\": \"Hello from Postman\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/process_transcript",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "process_transcript"
+          ]
+        },
+        "description": "Send a transcript string and receive an EMR-style summary. In DEMO mode without an OpenAI key, a pre-baked summary is returned."
+      },
+      "response": []
+    },
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/healthz",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "healthz"
+          ]
+        },
+        "description": "Quick health endpoint. Returns JSON like { ok: true, demo: <bool> }."
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:5000"
+    }
+  ]
+}
