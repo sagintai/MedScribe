@@ -194,13 +194,6 @@ Copy `.env.example` → `.env` and fill values.
 * **OpenAI error** — ensure `OPENAI_API_KEY` is set; check corporate proxies/VPN.
 * **Mic access denied** — allow microphone permissions in the browser or use file upload.
 
----
-
-## Roadmap / Nice‑to‑haves
-
-* Language toggle (en/ru) in UI
-* Export formats (SRT/JSON/Markdown)
-* Optional Dockerfile for one‑command run
 
 ## License
 
