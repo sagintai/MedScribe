@@ -53,8 +53,8 @@ This path works out of the box using pre‑baked outputs.
 1. **Clone & enter**
 
    ```bash
-   git clone <your-repo-url>
-   cd <repo>
+   git clone https://github.com/sagintai/MedScribe
+   cd MedScribe
    ```
 2. **Create a virtualenv & install deps**
 
